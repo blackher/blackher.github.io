@@ -332,8 +332,8 @@
         
           
             <p>在生成环境中收集线上多台服务器错误日志</p>
-<h1 id="PHP-java-中配置"><a href="#PHP-java-中配置" class="headerlink" title="PHP java 中配置"></a>PHP java 中配置</h1><h3 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h3><p>  <code>php的错误信息使用函数</code><a href="https://www.php.net/manual/zh/function.set-error-handler.php" target="_blank" rel="noopener">set-error-handler(callable $error_handler [, int $error_types = E_ALL | E_STRICT ])</a><br>  <code>php的框架经常会使用monolog 这个第三个包做日志处理</code></p>
-<h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h3><p> <code>Java 主流的框架使用的是log4j2包,可以将日志文件打入redis或者kafka中</code></p>
+<h1 id="PHP-java-中配置"><a href="#PHP-java-中配置" class="headerlink" title="PHP java 中配置"></a>PHP java 中配置</h1><h3 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h3><p>  <code>php的错误信息使用函数</code><a href="https://www.php.net/manual/zh/function.set-error-handler.php" target="_blank" rel="noopener">set-error-handler(callable $error_handler [, int $error_types = E_ALL | E_STRICT ])</a><br>  <code>php的框架经常会使用monolog做日志处理</code><br>  <code>以上都可以将日志打入存储中间件</code></p>
+<h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h3><p> <code>Java 主流的框架使用的是log4j2包,当然可以打入存储中间件</code></p>
 <h1 id="日志格式"><a href="#日志格式" class="headerlink" title="日志格式"></a>日志格式</h1><p> <code>使用Json格式处理</code></p>
 <h1 id="存储中间件"><a href="#存储中间件" class="headerlink" title="存储中间件"></a>存储中间件</h1><p> <code>如果日志只有一个地方消费,使用redis。多消费使用kafka。redis的性能要好于kafka</code></p>
 <h1 id="logstash-采集日志"><a href="#logstash-采集日志" class="headerlink" title="logstash 采集日志"></a>logstash 采集日志</h1><p><a href="https://www.elastic.co/cn/products/logstash" target="_blank" rel="noopener">logstash</a> 可以采集，处理，转换日志<br><a href="https://www.elastic.co/cn/products/filebeat" target="_blank" rel="noopener">filebeat</a> 简单文件采集</p>
