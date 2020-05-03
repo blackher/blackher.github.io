@@ -94,14 +94,17 @@
 
 
 
+<meta name="description" content="mysql 优化查看优化器状态show variables like &amp;#39;optimizer_trace&amp;#39; 会话级别临时开启set session optimizer_trace=&amp;quot;enabled=on&amp;quot;,end_markers_in_json=on 设置优化器追踪的内存大小set OPTIMIZER_TRACE_MAX_MEM_SIZE=1000000 执行自己">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何查看mysql执行情况">
 <meta property="og:url" content="http://yoursite.com/2020/05/03/如何查看mysql执行情况/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="mysql 优化查看优化器状态show variables like &amp;#39;optimizer_trace&amp;#39; 会话级别临时开启set session optimizer_trace=&amp;quot;enabled=on&amp;quot;,end_markers_in_json=on 设置优化器追踪的内存大小set OPTIMIZER_TRACE_MAX_MEM_SIZE=1000000 执行自己">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2020-05-03T12:19:08.654Z">
+<meta property="og:updated_time" content="2020-05-03T14:36:09.513Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何查看mysql执行情况">
+<meta name="twitter:description" content="mysql 优化查看优化器状态show variables like &amp;#39;optimizer_trace&amp;#39; 会话级别临时开启set session optimizer_trace=&amp;quot;enabled=on&amp;quot;,end_markers_in_json=on 设置优化器追踪的内存大小set OPTIMIZER_TRACE_MAX_MEM_SIZE=1000000 执行自己">
 
 
 
@@ -326,7 +329,13 @@
       
 
       
-        
+        <h1 id="mysql-优化"><a href="#mysql-优化" class="headerlink" title="mysql 优化"></a>mysql 优化</h1><h3 id="查看优化器状态"><a href="#查看优化器状态" class="headerlink" title="查看优化器状态"></a>查看优化器状态</h3><p><code>show variables like &#39;optimizer_trace&#39;</code></p>
+<h3 id="会话级别临时开启"><a href="#会话级别临时开启" class="headerlink" title="会话级别临时开启"></a>会话级别临时开启</h3><p><code>set session optimizer_trace=&quot;enabled=on&quot;,end_markers_in_json=on</code></p>
+<h3 id="设置优化器追踪的内存大小"><a href="#设置优化器追踪的内存大小" class="headerlink" title="设置优化器追踪的内存大小"></a>设置优化器追踪的内存大小</h3><p><code>set OPTIMIZER_TRACE_MAX_MEM_SIZE=1000000</code></p>
+<h3 id="执行自己的SQL"><a href="#执行自己的SQL" class="headerlink" title="执行自己的SQL"></a>执行自己的SQL</h3><p><code>select host,user,plugin from user</code></p>
+<h3 id="information-schema-optimizer-trace表"><a href="#information-schema-optimizer-trace表" class="headerlink" title="information_schema.optimizer_trace表"></a>information_schema.optimizer_trace表</h3><p><code>SELECT trace FROM information_schema.OPTIMIZER_TRACE</code><br><code>导入到一个命名为xx.trace的文件，然后用JSON阅读器来查看（如果没有控制台权限，或直接交由运维，让他把该 trace 文件，输出给你就行了</code></p>
+<p><code>SELECT TRACE INTO DUMPFILE &quot;E:\\test.trace&quot; FROM INFORMATION_SCHEMA.OPTIMIZER_TRACE</code></p>
+
       
     </div>
     
@@ -410,8 +419,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="shihe">
           <p class="site-author-name" itemprop="name">shihe</p>
@@ -453,6 +471,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#mysql-优化"><span class="nav-number">1.</span> <span class="nav-text">mysql 优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看优化器状态"><span class="nav-number">1.0.1.</span> <span class="nav-text">查看优化器状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#会话级别临时开启"><span class="nav-number">1.0.2.</span> <span class="nav-text">会话级别临时开启</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置优化器追踪的内存大小"><span class="nav-number">1.0.3.</span> <span class="nav-text">设置优化器追踪的内存大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#执行自己的SQL"><span class="nav-number">1.0.4.</span> <span class="nav-text">执行自己的SQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#information-schema-optimizer-trace表"><span class="nav-number">1.0.5.</span> <span class="nav-text">information_schema.optimizer_trace表</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
